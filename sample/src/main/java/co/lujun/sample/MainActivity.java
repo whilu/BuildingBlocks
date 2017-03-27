@@ -25,7 +25,6 @@
 package co.lujun.sample;
 
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
@@ -63,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
         list.add(image1);
         list.add(multi);
         list.add(text1);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.show();
         list.add(multi1);
 
         BaseAdapter adapter = new BaseAdapter()
