@@ -4,14 +4,13 @@ Assembly RecyclerView is as easy as building blocks!
 
 ## Usage
 
-#### Add dependency.
+#### Add dependency
 
 ```groovy
 dependencies {
     compile 'co.lujun:buildingblocks:1.0.0'
 }
 ```
-
 
 #### Create model and delegate
 
@@ -74,10 +73,10 @@ list.add(image);
 list.add(multi);
 
 BaseAdapter adapter = new BaseAdapter()
-        .addDelegate(new TextDelegate())
-        .addDelegate(new ImageDelegate())
-        .addDelegate(new MultiDelegate())
-        .buildWith(list);
+    .addDelegate(new TextDelegate())
+    .addDelegate(new ImageDelegate())
+    .addDelegate(new MultiDelegate())
+    .buildWith(list);
 
 recyclerView.setAdapter(adapter);
 ```
