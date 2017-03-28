@@ -39,7 +39,7 @@ import java.util.List;
 public class AdapterDelegateManager<T> {
 
     /**
-     * The delegate for building blocks
+     * The delegate collection for building blocks
      */
     private List<BaseDelegate> mAdapterDelegates;
 
