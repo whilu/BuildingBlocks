@@ -37,7 +37,7 @@ import java.util.List;
 public class BaseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     /**
-     * The data for building blocks
+     * The data collection for building blocks
      */
     private List mItems;
 
