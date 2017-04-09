@@ -85,6 +85,59 @@ public class AdapterDelegateManager<T> {
         }
     }
 
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List<Object> payloads) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            if (holder.getItemViewType() == delegate.getItemViewType()){
+                delegate.onBindViewHolder(holder, position, payloads);
+            }
+        }
+    }
+
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            if (holder.getItemViewType() == delegate.getItemViewType()){
+                delegate.onViewAttachedToWindow(holder);
+            }
+        }
+    }
+
+    public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            if (holder.getItemViewType() == delegate.getItemViewType()){
+                delegate.onViewDetachedFromWindow(holder);
+            }
+        }
+    }
+
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            delegate.onAttachedToRecyclerView(recyclerView);
+        }
+    }
+
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            delegate.onDetachedFromRecyclerView(recyclerView);
+        }
+    }
+
+    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            if (holder.getItemViewType() == delegate.getItemViewType()){
+                delegate.onViewRecycled(holder);
+            }
+        }
+    }
+
+    public boolean onFailedToRecycleView(RecyclerView.ViewHolder holder) {
+        for (BaseDelegate delegate : mAdapterDelegates) {
+            if (holder.getItemViewType() == delegate.getItemViewType()){
+                delegate.onFailedToRecycleView(holder);
+            }
+        }
+        throw new RuntimeException("No delegate match!");
+    }
+
     private boolean isDelegateIn(BaseDelegate inDelegate){
         boolean in = false;
         for (BaseDelegate delegate : mAdapterDelegates) {

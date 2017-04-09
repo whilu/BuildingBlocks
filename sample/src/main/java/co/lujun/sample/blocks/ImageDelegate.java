@@ -26,6 +26,7 @@ package co.lujun.sample.blocks;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,8 @@ import co.lujun.sample.bean.Image;
 
 public class ImageDelegate extends BaseDelegate<List> {
 
+    private static final String TAG = "ImageDelegate";
+
     @Override
     public boolean isForViewType(@NonNull List items, int position) {
         return items.get(position) instanceof Image;
@@ -59,6 +62,42 @@ public class ImageDelegate extends BaseDelegate<List> {
                                  @NonNull RecyclerView.ViewHolder holder) {
         ImageHolder imageHolder = (ImageHolder) holder;
 
+    }
+
+    @Override
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+        Log.d(TAG, "onViewAttachedToWindow");
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+        Log.d(TAG, "onViewDetachedFromWindow");
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        Log.d(TAG, "onAttachedToRecyclerView");
+    }
+
+    @Override
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+        Log.d(TAG, "onDetachedFromRecyclerView");
+    }
+
+    @Override
+    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+        super.onViewRecycled(holder);
+        Log.d(TAG, "onViewRecycled");
+    }
+
+    @Override
+    public boolean onFailedToRecycleView(RecyclerView.ViewHolder holder) {
+        Log.d(TAG, "onFailedToRecycleView");
+        return super.onFailedToRecycleView(holder);
     }
 
     class ImageHolder extends RecyclerView.ViewHolder{

@@ -28,6 +28,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * Author: lujun(http://blog.lujun.co)
  * Date: 2017-3-27 23:20
@@ -50,4 +52,20 @@ public abstract class BaseDelegate<T> {
     public abstract RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent);
 
     public abstract void onBindViewHolder(@NonNull T items, int position, @NonNull RecyclerView.ViewHolder holder);
+
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List<Object> payloads) {}
+
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {}
+
+    public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) {}
+
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {}
+
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {}
+
+    public void onViewRecycled(RecyclerView.ViewHolder holder) {}
+
+    public boolean onFailedToRecycleView(RecyclerView.ViewHolder holder) {
+        return false;
+    }
 }
