@@ -8,7 +8,7 @@ Assembly RecyclerView is as easy as building blocks!
 
 ```groovy
 dependencies {
-    compile 'co.lujun:buildingblocks:1.0.1'
+    compile 'co.lujun:buildingblocks:1.0.2'
 }
 ```
 
@@ -82,6 +82,9 @@ recyclerView.setAdapter(adapter);
 ```
 
 ## Change logs
+
+### 1.0.2(2017-4-12)
+- Merge PR[#2](https://github.com/whilu/BuildingBlocks/pull/2)
 
 ### 1.0.1(2017-4-9)
 - Add more callback for blocks

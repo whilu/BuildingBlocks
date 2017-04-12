@@ -132,9 +132,10 @@ public class AdapterDelegateManager<T> {
     public boolean onFailedToRecycleView(RecyclerView.ViewHolder holder) {
         for (BaseDelegate delegate : mAdapterDelegates) {
             if (holder.getItemViewType() == delegate.getItemViewType()){
-                delegate.onFailedToRecycleView(holder);
+                return delegate.onFailedToRecycleView(holder);
             }
         }
+        throw new RuntimeException("No delegate match!");
     }
 
     private boolean isDelegateIn(BaseDelegate inDelegate){
