@@ -135,7 +135,6 @@ public class AdapterDelegateManager<T> {
                 delegate.onFailedToRecycleView(holder);
             }
         }
-        throw new RuntimeException("No delegate match!");
     }
 
     private boolean isDelegateIn(BaseDelegate inDelegate){
